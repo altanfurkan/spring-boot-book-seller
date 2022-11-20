@@ -24,7 +24,7 @@ public class BookController {
 
     }
 
-   @GetMapping //api/book
+   //api/book
     public ResponseEntity<?> getAllBooks(){
         return new ResponseEntity<>(bookService.findAllBooks(), HttpStatus.OK);
     }

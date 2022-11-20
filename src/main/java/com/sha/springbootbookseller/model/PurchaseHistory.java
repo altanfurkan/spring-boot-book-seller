@@ -15,7 +15,7 @@ public class PurchaseHistory {
     private Long id;
 
     @Column(name = "user_id", nullable = false)
-    private String userId;
+    private Long userId;
 
     @Column(name = "book_id", nullable = false)
     private Long bookId;

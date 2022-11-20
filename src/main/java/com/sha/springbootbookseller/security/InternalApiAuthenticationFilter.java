@@ -23,13 +23,19 @@ public class InternalApiAuthenticationFilter extends OncePerRequestFilter
     }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-            throws ServletException, IOException {
+    protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException
+    {
+        return !request.getRequestURI().startsWith("/api/internal");
+    }
 
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException
+    {
         try {
             String requestKey = SecurityUtils.extractAuthTokenFromRequest(request);
 
-            if (requestKey == null || requestKey.equals(accessKey)){
+            if (requestKey == null || !requestKey.equals(accessKey)){
                 logger.warn("Internal key endpoint requested without/wrong key uri: {}");
                 throw new RemoteException("UNAUTHORIZED");
             }

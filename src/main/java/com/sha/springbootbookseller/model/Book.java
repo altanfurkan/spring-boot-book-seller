@@ -23,10 +23,10 @@ public class Book {
     @Column(name = "author", nullable = false, length = 100)
     private String author;
 
-    @Column(name = "price", nullable = false )
+    @Column(name = "price", nullable = false)
     private Double price;
 
-    @Column(name = "creat_time", nullable = false)
-    private LocalDateTime creatTime;
+    @Column(name = "create_time")
+    private LocalDateTime createTime;
 }
 

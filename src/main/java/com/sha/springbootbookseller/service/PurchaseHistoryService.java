@@ -12,8 +12,8 @@ import java.util.List;
 @Service
 public class PurchaseHistoryService implements IPurchaseHistoryService {
 
-    @Autowired
-    private IPurchaseHistoryRepository purchaseHistoryRepository;
+
+    private final IPurchaseHistoryRepository purchaseHistoryRepository;
 
     public PurchaseHistoryService(IPurchaseHistoryRepository purchaseHistoryRepository) {
         this.purchaseHistoryRepository = purchaseHistoryRepository;
@@ -26,7 +26,7 @@ public class PurchaseHistoryService implements IPurchaseHistoryService {
     }
 
     @Override
-    public List<IPurchaseItem> findPurchasedItemOfUser(Long userId){
+    public List<IPurchaseItem> findPurchasedItemsOfUser(Long userId){
         return purchaseHistoryRepository.findAllPurchasesOfUser(userId);
     }
 }

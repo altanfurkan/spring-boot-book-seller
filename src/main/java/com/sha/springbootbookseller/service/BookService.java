@@ -20,7 +20,7 @@ public class BookService implements IBookService {
 
     @Override
     public Book saveBook(Book book) {
-        book.setCreatTime(LocalDateTime.now());
+        book.setCreateTime(LocalDateTime.now());
         return bookRepository.save(book);
     }
 
