@@ -26,6 +26,4 @@ public class PurchaseHistoryController {
         return ResponseEntity.ok(purchaseHistoryService.findPurchasedItemsOfUser(userPrincipal.getId()));
     }
 
-
-
 }
