@@ -1,0 +1,8 @@
+{
+  "name": "mfa-spring-boot-aws-heroku",
+  "buildpacks": [
+    {
+      "url": "heroku/gradle"
+    }
+  ]
+}
